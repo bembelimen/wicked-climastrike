@@ -10,8 +10,9 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Plugin\CMSPlugin;
 
 /**
  * Load the JS file
@@ -35,6 +36,33 @@ class PlgSystemWickedClimastrike extends CMSPlugin
 		{
 			return true;
 		}
+		
+		$language = substr(Factory::getLanguage()->getTag(), 0, 2);
+		
+		switch ($language)
+		{
+			case 'en':
+			case 'de':
+			case 'es':
+			case 'cs':
+			case 'fr':
+			case 'nl':
+			case 'tr':
+			case 'pt':
+				break;
+				
+			default:
+				$language = null;
+		}
+		
+		$js = "
+			var DIGITAL_CLIMATE_STRIKE_OPTIONS = {
+				disableGoogleAnalytics: true,
+				language: '" . $language . "'
+			}
+		";
+		
+		Factory::getDocument()->addScriptDeclaration($js);
 
 		HTMLHelper::_('script', 'https://assets.digitalclimatestrike.net/widget.js', [], ['async' => true]);
 	}
