@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" version="3.9" method="upgrade">
+	<name>plg_system_wickedclimastrike</name>
+	<author>Benjamin Trenkle</author>
+	<creationDate>September 2019</creationDate>
+	<copyright>(C) 2019 Wicked Software, Benjamin Trenkle. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<authorEmail>kontakt@wicked-software.de</authorEmail>
+	<authorUrl>www.wicked-software.de</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_WICKEDCLIMASTRIKE_XML_DESCRIPTION</description>
+	<languages folder="language">
+		<language tag="de-DE">de-DE/de-DE.plg_system_wickedclimastrike.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_system_wickedclimastrike.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_wickedclimastrike.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_wickedclimastrike.sys.ini</language>
+	</languages>
+	<files>
+		<filename plugin="wickedclimastrike">wickedclimastrike.php</filename>
+	</files>
+</extension>
